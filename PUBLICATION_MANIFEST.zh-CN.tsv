@@ -1,0 +1,31 @@
+分析编号	步骤编号	分析主题	阶段	模块	状态	脚本入口	来源项目	输入摘要	输出摘要	已知边界
+01	01-04	细胞类型交互 ieQTL 发现与共享	结果整理	ieQTL 信号/基因共享表	已纳入	01_ieQTL_cell_type_regulation/01_ieQTL_discovery_and_sharing/00_prepare_sharing_tables.py	sheepgtex-eqtl-ieqtl	pair 汇总及合并显著 ieQTL gzip TSV	变异层面和 ieGene 层面共享表	不负责 OmiGA 拟合或显著性判断
+01	01-05	细胞类型交互 ieQTL 发现与共享	结果绘图	检出情况图	已适配	01_ieQTL_cell_type_regulation/01_ieQTL_discovery_and_sharing/01_plot_detectability.py	sheepgtex-eqtl-ieqtl	组织-细胞类型检出情况汇总表	论文风格图	细胞比例估计和 ieQTL 模型拟合仍缺失
+01	01-06	细胞类型交互 ieQTL 发现与共享	结果绘图	ieGene 组织共享图	已纳入	01_ieQTL_cell_type_regulation/01_ieQTL_discovery_and_sharing/02_plot_ieGene_sharing.py	sheepgtex-eqtl-ieqtl	已整理的 ieGene 共享表	组织间共享图	使用整理结果，不拟合 ieQTL
+01	01-01	细胞类型交互 ieQTL 发现与共享	细胞比例估计	DWLS 去卷积	缺失	未纳入	sheepgtex-eqtl-ieqtl	bulk 表达及 SheepCA 参考	每个样本的细胞比例	尚未恢复论文实际执行脚本和配置
+01	01-02	细胞类型交互 ieQTL 发现与共享	交互模型	OmiGA 基因型×细胞比例模型	缺失	未纳入	sheepgtex-eqtl-ieqtl	基因型、表达、细胞比例、协变量	nominal 和校正后的 ieQTL 结果	需确认准确命令、版本、协变量及阈值
+01	01-03	细胞类型交互 ieQTL 发现与共享	结果提取	合并/阈值处理 ieQTL 结果	缺失	未纳入	sheepgtex-eqtl-ieqtl	OmiGA 输出及研究显著性规则	合并结果和 pair 汇总	需把研究规则实现为可复用脚本
+01	02-01	bulk eQTL–ieQTL 比较	信号比较	基因/变异共享与效应比较	缺失	未纳入	sheepgtex-eqtl-ieqtl	匹配的 bulk-QTL 和 ieQTL 结果	共享/相关结果表	统计单位和系数比较仍需确认
+01	02-02	bulk eQTL–ieQTL 比较	共定位	bulk eQTL–ieQTL 共定位及位点案例	缺失	未纳入	sheepgtex-eqtl-ieqtl	匹配的 bulk eQTL 和细胞类型 ieQTL	共定位及案例结果	与 GWAS–ieQTL 流程不同，尚无完整便携脚本
+01	03-01	GWAS–ieQTL 共定位	统计分析	GWAS–ieQTL 共定位	已纳入	supporting_analyses_not_in_requested_figures/01_GWAS_ieQTL_colocalization/01_run_colocalization.R	sheepgtex-eqtl-ieqtl	协调后的分染色体 GWAS 和 ieQTL 汇总统计	共定位结果表	需要协调基因组版本和等位基因
+01	03-02	GWAS–ieQTL 共定位	结果绘图	候选位点图	已纳入	supporting_analyses_not_in_requested_figures/01_GWAS_ieQTL_colocalization/02_plot_candidate_loci.py	sheepgtex-eqtl-ieqtl	候选清单及区域 GWAS/ieQTL 文件	位点图	不等于因果/功能验证
+01	03-03	GWAS–ieQTL 共定位	案例绘图	耳长 STXBP1 位点	已纳入	supporting_analyses_not_in_requested_figures/01_GWAS_ieQTL_colocalization/03_plot_ear_length_case.py	sheepgtex-eqtl-ieqtl	GWAS、ieQTL、PLINK 基因型文件	LD 着色的位点图	LD 参考和组装版本必须匹配
+01	03-00	GWAS–ieQTL 共定位	输入准备	独立位点 LD 计算	已纳入	supporting_analyses_not_in_requested_figures/01_GWAS_ieQTL_colocalization/00_compute_locus_ld.py	sheepgtex-eqtl-ieqtl	PLINK 基因型前缀、lead 变异、染色体和区域	含命令及版本记录的 LD 表	独立结果模块，尚未接入旧位点绘图
+01	04-01	调控注释	匹配背景分析	E5 调控区富集	已纳入	supporting_analyses_not_in_requested_figures/02_regulatory_annotation/00_e5_matched_background_analysis.py	sheepgtex-eqtl-ieqtl	lead 变异、E5 区间和匹配背景变异	观察值与背景比较摘要	匹配富集不是因果验证
+02	01-01	复杂性状细胞定位	输入准备	性状/GWAS 质控和元数据	缺失	待恢复	scpagwas-xinong	15 个性状汇总统计和性状清单	标准化输入	尚无通用质控脚本
+02	01-02	复杂性状细胞定位	关联分析	绵羊 scPagwas 映射	缺失	未纳入	scpagwas-xinong	GWAS 和 SheepCA 单细胞参考	性状-细胞背景结果	需要论文所用对象、版本和运行配置
+02	02-01	复杂性状细胞定位	候选筛选	PCC 背景排序	已适配	02_complex_trait_cell_mapping/03_candidate_genes_and_pathways/00_rank_candidate_contexts.py	scpagwas-xinong	按背景拆分的 PCC 表	候选背景排序	不生成完整候选基因/通路结果
+02	02-02	复杂性状细胞定位	通路分析	候选基因富集	缺失	未纳入	scpagwas-xinong	候选基因和背景全集	通路富集结果	方法、数据库及背景未确认
+02	03-01	复杂性状细胞定位	网络扰动	虚拟敲除	缺失	未纳入	scpagwas-xinong	原始对象、靶基因、软件版本、参数及随机种子	扰动响应表	信息恢复前不宣称可复现
+02	04-01	复杂性状细胞定位	结果绘图	谱系关联	已适配	02_complex_trait_cell_mapping/01_global_trait_association/01_plot_lineage_associations.py	scpagwas-xinong	细胞关联汇总和谱系映射	谱系关联图	从研究结果表开始
+02	04-02	复杂性状细胞定位	结果绘图	性状全景	已适配	02_complex_trait_cell_mapping/04_tissue_level_extensions/00_plot_trait_landscape.py	scpagwas-xinong	细胞关联汇总表	性状-细胞背景图	从研究结果表开始
+03	01-01	跨物种疾病 GWAS 映射	疾病输入准备	GWAS 协调和坐标转换	缺失	未纳入	scpagwas-xinong	人类 GWAS、组装及映射参考	可分析的疾病输入	疾病特异的准确预处理脚本尚缺
+03	01-02	跨物种疾病 GWAS 映射	关联分析	人类疾病 GWAS 到羊细胞背景	缺失	未纳入	scpagwas-xinong	GWAS、羊图谱和人类/单细胞参考	疾病-细胞关联表	银屑病/皮炎/哮喘的完整映射流程尚未打包
+03	01-01	跨物种疾病 GWAS 映射	位点输入准备	GWAS 位点窗口预处理	已纳入	03_cross_species_disease_analysis/01_human_GWAS_to_sheep_cells/00_prepare_500kb_gwas_loci.py	scpagwas-xinong	已预处理并合并的人类 GWAS/COJO 位点	位点窗口和处理清单	不负责原始 GWAS 协调或组装转换
+03	01-04	跨物种疾病 GWAS 映射	案例分析	哮喘肺/气道案例	已纳入	03_cross_species_disease_analysis/01_human_GWAS_to_sheep_cells/04_asthma_lung_airway_case.py	scpagwas-xinong	疾病汇总、同源基因及人羊表达	哮喘案例输出	案例模块，不是完整疾病映射流程
+03	02-00	保守表达与功能富集	表达导出	Seurat 分组平均表达	已纳入	03_cross_species_disease_analysis/02_conserved_expression_and_enrichment/00_export_seurat_group_mean.R	scpagwas-xinong	已注释 Seurat 对象、分组列和 RNA layer	基因×分组平均表达及细胞数元数据	细胞均值，不是按样本汇总的 count pseudobulk
+03	02-01	保守表达与功能富集	表达协调	组织表达桥接	已纳入	03_cross_species_disease_analysis/02_conserved_expression_and_enrichment/02_tissue_expression_bridge.py	scpagwas-xinong	羊分组均值、人类单细胞对象、一对一同源基因	匹配组织表达相关	记录表达层、分组和同源基因版本
+03	02-02	保守表达与功能富集	表达协调	细胞类型表达桥接	已纳入	03_cross_species_disease_analysis/02_conserved_expression_and_enrichment/03_celltype_expression_bridge.py	scpagwas-xinong	羊分组均值、人类对象、同源基因及标签映射	匹配细胞类型表达相关	不会自动协调细胞标签
+03	02-03	保守表达与功能富集	功能分析	保守差异基因和 GO 富集生成	缺失	未纳入	scpagwas-xinong	人羊疾病相关基因集及检验背景	GO 结果	当前只有结果图，不含富集生成
+03	02-04	保守表达与功能富集	结果绘图	特应性皮炎 GO 图	已纳入	03_cross_species_disease_analysis/02_conserved_expression_and_enrichment/05_plot_ad_go_enrichment.R	scpagwas-xinong	预先计算的 DEG 和 GO 富集表	GO 河流图	脚本内预设了条目筛选
+03	02-05	保守表达与功能富集	结果绘图	银屑病稳定同源基因图	已纳入	03_cross_species_disease_analysis/02_conserved_expression_and_enrichment/06_plot_psoriasis_orthologs.py	scpagwas-xinong	PCC 排名和稳定同源基因汇总	疾病案例图	需提供稳定表达判据和来源表
