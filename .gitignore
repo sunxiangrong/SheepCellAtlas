@@ -1,0 +1,29 @@
+# Controlled or large research data
+data/
+results/
+figures/
+*.h5ad
+*.h5
+*.h5mu
+*.rds
+*.RData
+*.vcf
+*.vcf.gz
+*.bcf
+*.bam
+*.cram
+*.bim
+*.bed
+*.fam
+
+# Private and machine-specific material
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.private*
+private*/
+.DS_Store
+__pycache__/
+*.py[cod]
