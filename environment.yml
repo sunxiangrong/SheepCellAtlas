@@ -1,0 +1,22 @@
+name: sheepca-genetics
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - scanpy
+  - anndata
+  - h5py
+  - r-base
+  - r-data.table
+  - r-readr
+  - r-dplyr
+  - r-tidyr
+  - r-ggplot2
+  - r-stringr
+  - bioconductor-coloc
